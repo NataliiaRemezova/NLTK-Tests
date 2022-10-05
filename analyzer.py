@@ -7,8 +7,8 @@ NEGATIVE_DICTIONARY_NAME = "negative_dictionary.txt"
 FILE_TEXT_NAME = "text.txt"
 
 
-def get_words_from_file(path_root: str, dictionary_name: str):
-    return [elem.lower() for elem in PlaintextCorpusReader(path_root, '.*').words(dictionary_name)]
+def get_words_from_file(path_root: str, file_name: str):
+    return [elem.lower() for elem in PlaintextCorpusReader(path_root, '.*').words(file_name)]
 
 
 def get_text_from_file(path_to_file: str):
