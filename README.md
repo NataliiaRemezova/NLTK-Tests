@@ -1,5 +1,3 @@
-# NLTK-Tests
-
 # Test analyzer
 
 This is a simple sentiment analyzer using NLTK created for learning purposes.
