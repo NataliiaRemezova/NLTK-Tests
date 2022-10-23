@@ -1,6 +1,7 @@
+import logging
+
 from nltk.corpus import PlaintextCorpusReader
 from nltk.sentiment import SentimentIntensityAnalyzer
-import logging
 
 
 def get_words_from_file(path_root: str, dictionary_name: str) -> list[str]:
@@ -20,5 +21,5 @@ def define_text_mood(processed_data: dict[str, float]) -> str:
 def process_sentiment_intensity_analysis(text: str) -> str:
     sia = SentimentIntensityAnalyzer()
     processed_data = sia.polarity_scores(text)
-    logging.info(processed_data)
+    logging.info("Text was processed. Common estimation of sentiment: %s", str(processed_data))
     return define_text_mood(processed_data)
