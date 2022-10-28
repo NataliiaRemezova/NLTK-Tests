@@ -21,5 +21,5 @@ def define_text_mood(processed_data: dict[str, float]) -> str:
 def process_sentiment_intensity_analysis(text: str) -> str:
     sia = SentimentIntensityAnalyzer()
     processed_data = sia.polarity_scores(text)
-    logging.info("Text was processed. Common estimation of sentiment: %s", str(processed_data))
+    logging.debug("Text was processed. Common estimation of sentiment: %s", str(processed_data))
     return define_text_mood(processed_data)

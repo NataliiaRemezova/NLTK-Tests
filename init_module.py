@@ -38,9 +38,9 @@ def analyze_data_from_database():
     db_session = db_engine.init_db_connection()
     result = db_connector.get_all_unprocessed_body(db_session)
     for row in result:
-        logging.info("Received data by id %d: %s", row["id"], row["body"])
+        logging.debug("Received data by id %d: %s", row["id"], row["body"])
         sentiment = analyzer.process_sentiment_intensity_analysis(row["body"])
-        logging.info("Definition of sentiment: %s", sentiment)
+        logging.debug("Definition of sentiment: %s", sentiment)
         db_connector.update_unprocessed_data_by_id(sentiment, row["id"], db_session)
     db_session.commit()
 
